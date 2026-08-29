@@ -1,0 +1,18 @@
+<form class="search" (submit)="onSubmit($event)">
+  <div class="search__field">
+    <span class="search__icon" aria-hidden="true">&#128269;</span>
+    <input
+      class="search__input"
+      type="text"
+      name="query"
+      [(ngModel)]="query"
+      placeholder="Busca por nombre o número (ej: pikachu, 25)"
+      autocomplete="off"
+      aria-label="Buscar Pokémon"
+    />
+  </div>
+  <button class="search__button" type="submit" [disabled]="loading">
+    <span *ngIf="!loading">Buscar</span>
+    <span *ngIf="loading">Buscando...</span>
+  </button>
+</form>

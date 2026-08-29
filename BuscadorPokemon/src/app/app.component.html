@@ -1,0 +1,47 @@
+<main class="app">
+  <header class="hero">
+    <div class="hero__badge" aria-hidden="true">
+      <span class="hero__ball"></span>
+    </div>
+    <h1 class="hero__title pixel-font">Pokédex</h1>
+    <p class="hero__subtitle">
+      Busca cualquier Pokémon y descubre su imagen, tipos y estadísticas.
+    </p>
+    <app-search [loading]="loading" (search)="onSearch($event)"></app-search>
+  </header>
+
+  <section class="content">
+    <p *ngIf="loading" class="status status--loading">Cargando Pokémon...</p>
+
+    <p *ngIf="error && !loading" class="status status--error">{{ error }}</p>
+
+    <p
+      *ngIf="!loading && !error && !hasSearched"
+      class="status status--info"
+    >
+      Estos son algunos Pokémon para empezar. ¡Usa el buscador para encontrar el tuyo!
+    </p>
+
+    <div class="grid" *ngIf="results.length > 0 && !loading">
+      <app-pokemon-card
+        *ngFor="let p of results"
+        [pokemon]="p"
+        (select)="onSelect($event)"
+      ></app-pokemon-card>
+    </div>
+  </section>
+
+  <app-pokemon-detail
+    *ngIf="selected"
+    [pokemon]="selected"
+    (close)="onCloseDetail()"
+  ></app-pokemon-detail>
+
+  <footer class="footer">
+    <p>
+      Datos proporcionados por
+      <a href="https://pokeapi.co" target="_blank" rel="noopener noreferrer">PokeAPI</a>
+      &middot; Hecho con Angular
+    </p>
+  </footer>
+</main>

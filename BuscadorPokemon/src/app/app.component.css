@@ -1,0 +1,134 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 40px;
+}
+
+.hero {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+.hero__badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hero__ball {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--poke-red) 0 50%, #fff 50% 100%);
+  border: 4px solid var(--poke-ink);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.hero__ball::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--poke-ink);
+  transform: translateY(-50%);
+}
+
+.hero__ball::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--poke-ink);
+  transform: translate(-50%, -50%);
+}
+
+.hero__title {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 6vw, 48px);
+  color: var(--poke-yellow);
+  text-shadow: 3px 3px 0 var(--poke-blue), 6px 6px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.hero__subtitle {
+  margin: 0 auto 28px;
+  max-width: 520px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.content {
+  width: 100%;
+  max-width: 1000px;
+  flex: 1;
+}
+
+.status {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 14px;
+  margin: 20px auto;
+  max-width: 560px;
+}
+
+.status--loading {
+  color: var(--poke-yellow);
+}
+
+.status--error {
+  color: #fff;
+  background: rgba(238, 21, 21, 0.85);
+}
+
+.status--info {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 12px 0;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.footer a {
+  color: var(--poke-yellow);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

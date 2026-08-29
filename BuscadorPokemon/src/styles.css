@@ -1,0 +1,45 @@
+:root {
+  /* Paleta Pokémon */
+  --poke-red: #ee1515;
+  --poke-red-dark: #cc0000;
+  --poke-yellow: #ffcb05;
+  --poke-yellow-dark: #f2a900;
+  --poke-blue: #3b4cca;
+  --poke-blue-light: #2a75bb;
+  --poke-white: #ffffff;
+  --poke-ink: #1a1a2e;
+  --poke-gray: #f0f0f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--poke-ink);
+  background: radial-gradient(circle at top, #3b4cca 0%, #2a2f6b 55%, #1a1a2e 100%);
+  background-attachment: fixed;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', 'Poppins', cursive;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--poke-red);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
