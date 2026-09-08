@@ -1,0 +1,185 @@
+:root {
+    --azul: #1d4ed8;
+    --azul-oscuro: #1e3a8a;
+    --fondo: #eff6ff;
+    --borde: #cbd5e1;
+    --texto: #1e293b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 18px;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+}
+
+#contenedor-formulario {
+    width: min(960px, 100%);
+    margin: 0 auto;
+    padding: 20px 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
+}
+
+#encabezado-formulario {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+#titulo-formulario {
+    margin: 0;
+    color: var(--azul-oscuro);
+    font-size: 1.55rem;
+}
+
+#formulario-registro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+input,
+select,
+button {
+    min-height: 38px;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--borde);
+    background: #ffffff;
+    color: var(--texto);
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid rgba(29, 78, 216, 0.2);
+    border-color: var(--azul);
+}
+
+#campo-politica {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#politica {
+    width: 17px;
+    min-height: 17px;
+    margin: 0;
+}
+
+#etiqueta-politica {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+#campo-envio {
+    grid-column: 1 / -1;
+    align-items: center;
+}
+
+#boton-enviar {
+    width: min(220px, 100%);
+    padding: 8px 16px;
+    border: 0;
+    background: var(--azul);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#boton-enviar:hover {
+    background: var(--azul-oscuro);
+}
+
+@media (max-width: 620px) {
+    body {
+        padding: 12px;
+    }
+
+    #contenedor-formulario {
+        padding: 18px;
+    }
+
+    #formulario-registro {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+#retos-logicos {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+#retos-logicos h2 {
+    margin-top: 0;
+}
+
+#retos-logicos .grupo-campo {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+#retos-logicos label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#retos-logicos input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#retos-logicos button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+#retos-logicos button:hover {
+    background-color: #1d4ed8;
+}
+
+#retos-logicos p {
+    margin: 12px 0 0;
+    font-weight: bold;
+}
