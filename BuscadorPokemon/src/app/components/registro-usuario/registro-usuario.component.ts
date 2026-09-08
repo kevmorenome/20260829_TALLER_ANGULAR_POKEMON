@@ -63,7 +63,7 @@ export class RegistroUsuarioComponent {
     politica : this.politica()
 }
 
-localStorage.setItem(usuarioGuardado.id.toString(), JSON.stringify(usuarioGuardado));
+localStorage.setItem(usuarioCreado.id.toString(), JSON.stringify(usuarioCreado));
 
 this.ultimoUsuario.set(usuarioCreado);
   }
