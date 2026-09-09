@@ -7,7 +7,7 @@
             <form id="formulario-registro" (ngSubmit)="guardarUsuario()">
                 <div id="campo-nombre" class="grupo-campo">
                     <label id="etiqueta-nombre" for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                    <input type="text" id="nombre" [(ngModel)] ="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
                 </div>
 
                 <div id="campo-apellido" class="grupo-campo">
@@ -102,9 +102,7 @@
                 <p><strong>ID generado:</strong> {{ user.id }}</p>
                 <p><strong>Nombre Completo:</strong> {{ user.nombreCompleto }}</p>
                 <p><strong>Documento:</strong> {{ user.documento.tipo }} - {{ user.documento.numero }}</p>
-                <p><strong>Fecha de Nacimiento:</strong> {{ user.fechaNacimiento }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}</p>
                 <p><strong>Correo:</strong> {{ user.correo }}</p>
                 </div>
             }
-
-        </main>

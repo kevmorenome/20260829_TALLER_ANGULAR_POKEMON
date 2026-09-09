@@ -23,7 +23,7 @@ body {
     width: min(960px, 100%);
     margin: 0 auto;
     padding: 20px 24px;
-    background: #ffffff;
+    background: #31a9e9;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
 }
@@ -107,7 +107,7 @@ select:focus {
     padding: 8px 16px;
     border: 0;
     background: var(--azul);
-    color: #ffffff;
+    color: #120748;
     cursor: pointer;
     font-weight: 700;
 }

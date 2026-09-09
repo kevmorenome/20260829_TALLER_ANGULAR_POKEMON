@@ -42,7 +42,7 @@ export class RegistroUsuarioComponent {
   ultimoUsuario = signal<Usuario | null>(null);
 
   guardarUsuario() {
-    if(!this.datos_personales()) {
+    if(!this.politica()) {
       alert('Debe aceptar el tratamiento de datos personales.');
     }
 
