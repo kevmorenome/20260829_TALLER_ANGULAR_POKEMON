@@ -36,7 +36,7 @@ export class BuscadorPokemonComponent {
         this.pokemon.set({
           id: res.id,
           name: res.name.toUpperCase(),
-          img: res.sprite.front_default,
+          img: res.sprites.front_default,
           type: res.types[0].type.name,
           baseExperience: res.base_experience,
           esFavorito: false
@@ -51,7 +51,7 @@ export class BuscadorPokemonComponent {
 
   }
 
-  guardarenEquipo() {
+  guardarEnEquipo() {
     const poke = this.pokemon();
 
 

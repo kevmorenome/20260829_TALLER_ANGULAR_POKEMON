@@ -1,9 +1,5 @@
 <div>
     <form (ngSubmit)="buscarPokemon()">
-        @if(pokemonService.cargando)
-
-
-
         <div>
             <label for="nombrePokemon">Inserte el nombre del Pokémon:</label>
             <input
@@ -15,7 +11,7 @@
             />
         </div>
         <div>
-            <button type="submit" [disabled="cargando()"]>Buscar</button>
+            <button type="submit" [disabled]="cargando()"> {{ cargando()? 'Escaneando...' : 'Buscar' }}</button>
         </div>
 
     </form>
@@ -27,7 +23,7 @@
 
 @if(pokemon(); as poke){
 
-    <div appResaltarTarjeta colorBorde=""#0000FF" class="card-pokemon">
+    <div appResaltarTarjeta colorBorde="#0000FF" class="card-pokemon">
         <h3>{{poke.name}} (#{{poke.id}})</h3>
         <img [src]="poke.img">
 
@@ -36,7 +32,7 @@
             <span class="badge-tipo" [ngStyle]="{
                 'background-color': poke.type === 'fire' ? '#ff0000' :
                                     poke.type === 'water' ? '#0000ff' :
-                                    poke.type === 'grass' ? '#008000' :
+                                    poke.type === 'grass' ? '#008000' : '#777777'
             }">
             {{poke.type}}
             </span>
