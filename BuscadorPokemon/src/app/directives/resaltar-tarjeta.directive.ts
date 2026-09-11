@@ -4,7 +4,7 @@ import { Directive, ElementRef, HostListener, inject, input } from '@angular/cor
   selector: '[appResaltarTarjeta]',
   standalone: true
 })
-export class ResaltarTarjetaDirective {
+export class ResaltarTarjeta {
   private el = inject(ElementRef);
 
   colorBorde = input<string>('#ffff00');

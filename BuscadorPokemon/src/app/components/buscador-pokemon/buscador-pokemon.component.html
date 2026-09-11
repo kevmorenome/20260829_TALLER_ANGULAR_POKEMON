@@ -1,30 +1,50 @@
-<form (ngSubmit)="buscarPokemon()">
-    <div>
-        <label for="nombrePokemon">Nombre del Pokémon:</label>
-        <input
-        type="text"
-        [(ngModel)]="nombrePokemonInput"
-        name = "nombrePokemon"
-        placeholder = "Ej: Pikachu, Charmander, Bulbasaur"
-        required
-        />
-    </div>
-    <div>
-        <button type="submit">Buscar</button>
-    </div>
+<div>
+    <form (ngSubmit)="buscarPokemon()">
+        @if(pokemonService.cargando)
 
 
-</form>
-
-<div id="ResultadoPokemon">
-    @if(pokemon(); as p){
 
         <div>
-            <h2>{{ p.name }}</h2>
-            <img [src]="p.image" [alt]="p.name"/>
-            <p><strong>Elementos: </strong>{{ p.type }}</p>
+            <label for="nombrePokemon">Inserte el nombre del Pokémon:</label>
+            <input
+            type="text"
+            [(ngModel)]="nombrePokemonInput"
+            name = "nombrePokemon"
+            placeholder = "Ej: Pikachu, Charmander, Bulbasaur"
+            required
+            />
         </div>
-    } @else if(!mensajeError()){
-        <p>Error con aura</p>
-    }
+        <div>
+            <button type="submit" [disabled="cargando()"]>Buscar</button>
+        </div>
+
+    </form>
 </div>
+
+@if (mensajeError()){
+    <p class="error">{{ mensajeError() }}</p>
+}
+
+@if(pokemon(); as poke){
+
+    <div appResaltarTarjeta colorBorde=""#0000FF" class="card-pokemon">
+        <h3>{{poke.name}} (#{{poke.id}})</h3>
+        <img [src]="poke.img">
+
+        <p>
+            Tipo:
+            <span class="badge-tipo" [ngStyle]="{
+                'background-color': poke.type === 'fire' ? '#ff0000' :
+                                    poke.type === 'water' ? '#0000ff' :
+                                    poke.type === 'grass' ? '#008000' :
+            }">
+            {{poke.type}}
+            </span>
+        </p>
+
+            <p>Exp. Base: <strong>{{poke.baseExperience}}</strong></p>
+            <button class="btn-guardar" (click)="guardarEnEquipo()">
+                Almacenar en Inventario
+            </button>
+    </div>
+}

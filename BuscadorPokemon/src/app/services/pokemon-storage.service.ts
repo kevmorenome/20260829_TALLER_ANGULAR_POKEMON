@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 export interface PokemonTarjeta {
   id: number;
   name: string;
-  image: string;
+  img: string;
   type: string;
   baseExperience: number;
   esFavorito?: boolean;
