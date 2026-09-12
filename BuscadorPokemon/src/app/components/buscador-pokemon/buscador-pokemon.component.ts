@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgStyle } from '@angular/common'
+import { NgStyle } from '@angular/common'
 import { PokemonStorageService, PokemonTarjeta } from '../../services/pokemon-storage.service';
 import { ResaltarTarjeta } from '../../directives/resaltar-tarjeta.directive';
 
@@ -9,7 +9,7 @@ import { ResaltarTarjeta } from '../../directives/resaltar-tarjeta.directive';
 @Component({
   selector: 'app-buscador-pokemon',
   standalone: true,
-  imports: [FormsModule, NgClass, NgStyle, ResaltarTarjeta],
+  imports: [FormsModule, NgStyle, ResaltarTarjeta],
   templateUrl: './buscador-pokemon.component.html',
   styleUrl: './buscador-pokemon.component.css'
 })
@@ -26,7 +26,7 @@ export class BuscadorPokemonComponent {
   cargando = signal(false);
 
   buscarPokemon() {
-    const nombrePokemon = this.nombrePokemonInput().trim().toLowerCase();
+    const nombrePokemon = this.nombrePokemonInput().trim();
     if (!nombrePokemon) return;
     this.cargando.set(true)
     this.mensajeError.set(null);

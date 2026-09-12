@@ -1,1 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --red: #dc2626;
+  --red-dark: #991b1b;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --border: #e5e7eb;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #fee2e2 0%, var(--bg) 45%);
+  color: var(--ink);
+  min-height: 100vh;
+}
