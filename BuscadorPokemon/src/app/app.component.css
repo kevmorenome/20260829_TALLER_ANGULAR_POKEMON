@@ -1,0 +1,83 @@
+/* Encabezado Pokédex */
+header {
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  color: #ffffff;
+  padding: 24px 20px 20px;
+  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Título con insignia de Pokédex */
+header h1 {
+  text-align: center;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header h1::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #38bdf8;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* Navegación y Enlaces */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Pestaña Activa */
+nav ul li a.active {
+  background: #ffffff;
+  color: var(--red-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Contenedor de las vistas */
+main {
+  max-width: 900px;
+  margin: 36px auto 60px;
+  padding: 0 20px;
+}

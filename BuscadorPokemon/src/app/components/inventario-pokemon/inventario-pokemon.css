@@ -1,52 +1,136 @@
-.grid-pokemons {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 1.5rem;
+:host {
+  display: block;
 }
 
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+div > p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+div > p strong {
+  color: var(--red);
+  font-weight: 800;
+}
+
+/* Cuadrícula de Pokémon */
+.grid-pokemons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* Tarjeta individual */
 .item-inventario {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
+  background: var(--card);
+  padding: 20px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
   text-align: center;
+  box-shadow: var(--shadow-sm);
   position: relative;
+  transition: all 0.2s ease;
 }
 
 .posicion-badge {
-  font-size: 0.75rem;
-  color: #757575;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 
+.item-inventario img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 10px auto 6px;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+}
+
+.item-inventario h4 {
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.item-inventario p {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: capitalize;
+  margin-bottom: 14px;
+}
+
+/* Favorito Activo */
 .favorito-activo {
-  background-color: #fffde7;
-  border: 2px solid #fbc02d !important;
+  background: #fffbeb !important;
+  border: 2px solid var(--yellow) !important;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2) !important;
 }
 
+/* Botones de acción */
 .acciones {
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  gap: 8px;
+  justify-content: center;
+}
+
+.acciones button {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  color: var(--ink-light);
+  transition: all 0.15s ease;
+}
+
+.acciones button:hover {
+  background: #f1f5f9;
 }
 
 .btn-fav {
-  background-color: #fbc02d;
-  color: #333;
-  font-weight: bold;
+  background: var(--yellow) !important;
+  color: #ffffff !important;
+  border-color: var(--yellow) !important;
 }
 
 .btn-eliminar {
-  background-color: #e57373;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
 }
 
+.btn-eliminar:hover {
+  background: #fecaca !important;
+}
+
+/* Sin datos */
 .sin-datos {
   grid-column: 1 / -1;
   text-align: center;
-  padding: 2rem;
-  color: #666;
+  padding: 48px 20px;
+  background: var(--card);
+  border-radius: 20px;
+  border: 2px dashed var(--border);
+  color: var(--muted);
+  font-size: 15px;
 }
